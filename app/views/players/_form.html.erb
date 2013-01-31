@@ -1,0 +1,41 @@
+<%= form_for(@player) do |f| %>
+  <% if @player.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@player.errors.count, "error") %> prohibited this player from being saved:</h2>
+
+      <ul>
+      <% @player.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+	<div class="field">
+		<%= f.label :roster_id %><br />
+		<%= f.select :roster_id, options_from_collection_for_select(Roster.all, :id, :name), :include_blank => true %>
+	</div>
+  <div class="field">
+    <%= f.label :number %><br />
+    <%= f.number_field :number %>
+  </div>
+  <div class="field">
+    <%= f.label :position %><br />
+    <%= f.text_field :position %>
+  </div>
+	<div class="field">
+    <%= f.label :height %><br />
+    <%= f.text_field :height %>
+  </div>
+	<div class="field">
+    <%= f.label :weight %><br />
+    <%= f.text_field :weight %>
+  </div>
+	<div class="field">
+    <%= f.label :year_of_eligibility %><br />
+    <%= f.text_field :year_of_eligibility %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

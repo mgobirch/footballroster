@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  year: 
+  status: MyString
+  status_explanation: MyString
+  transfer_school: MyString
+
+two:
+  year: 
+  status: MyString
+  status_explanation: MyString
+  transfer_school: MyString
