@@ -1,0 +1,22 @@
+en:
+  simple_form:
+    "yes": 'Yes'
+    "no": 'No'
+    required:
+      text: 'required'
+      mark: '*'
+    error_notification:
+      default_message: "Please review the problems below:"
+    labels:
+      player:
+        number: 'No.'
+        position: 'Pos.'
+    hints:
+      player:
+        number: 'Enter Player Number'
+        position: 'Enter Player Position'
+    placeholders:
+      player:
+        number: 'Player Number'
+        position: 'Player Position'
+
