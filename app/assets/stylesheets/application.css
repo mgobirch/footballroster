@@ -10,5 +10,6 @@
  *
  *= require_self
  *= require forms
+ *= require bootstrap.min.css
  *= require_tree .
  */
