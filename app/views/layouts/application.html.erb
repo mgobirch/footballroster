@@ -18,13 +18,13 @@
       <a class="brand" href="<%= root_path %>">Football Roster</a>
       <div class="nav-collapse collapse">
         <ul class="nav">
-          <li class="<%= "active" if @nav == :home %>">
+          <li class="active">
           <a href="<%= root_path %>">Home</a>
           </li>
-          <li class="<%= "active" if @nav == :players %>">
+          <li>
             <a href="<%= players_path %>">Players</a>
           </li>
-          <li class="<%= "active" if @nav == :rosters %>">
+          <li>
             <a href="<%= rosters_path %>">Rosters</a>
           </li>
         </ul>
