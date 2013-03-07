@@ -1,6 +1,8 @@
 class PlayersController < ApplicationController
   # GET /players
   # GET /players.json
+  before_filter :set_nav
+  
   def index
     @players = Player.all
 
@@ -79,5 +81,9 @@ class PlayersController < ApplicationController
       format.html { redirect_to players_url }
       format.json { head :no_content }
     end
+  end
+  
+  def set_nav
+    @nav = :players
   end
 end

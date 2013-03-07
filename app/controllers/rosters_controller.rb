@@ -1,6 +1,8 @@
 class RostersController < ApplicationController
   # GET /rosters
   # GET /rosters.json
+  before_filter :set_nav
+  
   def index
     @rosters = Roster.all
 
@@ -79,5 +81,9 @@ class RostersController < ApplicationController
       format.html { redirect_to rosters_url }
       format.json { head :no_content }
     end
+  end
+  
+  def set_nav
+    @nav = :rosters
   end
 end

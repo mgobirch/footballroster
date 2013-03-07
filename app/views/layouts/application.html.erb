@@ -18,13 +18,13 @@
       <a class="brand" href="<%= root_path %>">Football Roster</a>
       <div class="nav-collapse collapse">
         <ul class="nav">
-          <li class="active">
+          <li class="<%= "active" if @nav == :home %>">
           <a href="<%= root_path %>">Home</a>
           </li>
-          <li>
+          <li class="<%= "active" if @nav == :players %>">
             <a href="<%= players_path %>">Players</a>
           </li>
-          <li>
+          <li class="<%= "active" if @nav == :rosters %>">
             <a href="<%= rosters_path %>">Rosters</a>
           </li>
         </ul>
@@ -36,7 +36,8 @@
     </div>
   </div>
 </div>
+<div class="container">
 <%= yield %>
-
+</div>
 </body>
 </html>
