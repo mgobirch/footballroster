@@ -23,7 +23,7 @@
 </p>
 <p>
 	<b>Roster</b>
-	<%= @player.roster.name %>
+	<%= @player.rosters.each %>
 </p>
 
 <%= link_to 'Edit', edit_player_path(@player) %> |
