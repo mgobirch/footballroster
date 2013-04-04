@@ -2,6 +2,7 @@
 
 <table>
   <tr>
+    <th>Name</th>
     <th>Number</th>
     <th>Position</th>
     <th>Height</th>
@@ -15,6 +16,7 @@
 
 <% @players.each do |player| %>
   <tr>
+    <td><%= player.name %></td>
     <td><%= player.number %></td>
     <td><%= player.position %></td>
 		<td><%= player.height %></td>
