@@ -1,6 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <b>Name:</b>
+  <%= @player.name %>
+</p>
+
+<p>
   <b>Number:</b>
   <%= @player.number %>
 </p>
@@ -23,7 +28,7 @@
 </p>
 <p>
 	<b>Roster</b>
-	<%= @player.roster.name %>
+	<%= @player.rosters.each %>
 </p>
 
 <%= link_to 'Edit', edit_player_path(@player) %> |

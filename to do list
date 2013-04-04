@@ -1,0 +1,19 @@
+To Do:
+
+Add a method to player model which will return an array of eligible_years
+
+looping through all rosters and return eligible years for them
+
+begin returning players from their first year of eligibility
+
+limit amount of returned to 4 +1 for each eligible year spent with special status
+
+return any eligible years which already exist
+
+loop through each eligible year and display a nested form
+
+might want to add a few eligible years in the console
+
+add player name to player model and form
+
+add form for player positions

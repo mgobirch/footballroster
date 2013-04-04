@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130131031139) do
+ActiveRecord::Schema.define(:version => 20130404000135) do
 
   create_table "eligible_years", :force => true do |t|
     t.integer  "year"
@@ -24,6 +24,16 @@ ActiveRecord::Schema.define(:version => 20130131031139) do
     t.datetime "updated_at",         :null => false
   end
 
+  create_table "player_positions", :force => true do |t|
+    t.string   "position"
+    t.integer  "player_id"
+    t.date     "started_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "player_positions", ["player_id"], :name => "index_player_positions_on_player_id"
+
   create_table "players", :force => true do |t|
     t.integer  "number"
     t.string   "position"
@@ -32,6 +42,7 @@ ActiveRecord::Schema.define(:version => 20130131031139) do
     t.string   "year_of_eligibility"
     t.datetime "created_at",          :null => false
     t.datetime "updated_at",          :null => false
+    t.string   "name"
   end
 
   create_table "rosters", :force => true do |t|
