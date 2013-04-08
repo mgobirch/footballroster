@@ -1,11 +1,11 @@
 <%= simple_form_for(@player) do |f| %>
   
+	<%= f.input :name %>
 	<%= f.input :number %>
-	<%= f.input :position %>
 	<%= f.input :height %>
 	<%= f.input :weight %>
 	<%= f.input :year_of_eligibility %>
-  <% (Date.today.year..(Date.today.year + 4)).each do |year| %>
+  <% Player.elegible_years_for_year(Date.today.year).each do |year| %>
     <%= f.simple_fields_for :eligible_years, @player.eligible_years.new(:year => year) do |eyf| %>
       <%= eyf.input :year %>
       <%= eyf.input :status, :collection => ["Playing", "Redshirt"] %>
@@ -13,6 +13,22 @@
       <%= eyf.input :transfer_school %>
     <% end %>
   <% end %>
+  <% @player.positions.each_with_index do |position, n| %>
+    <fieldset>
+      <legend>Position <%= n + 1 %></legend>
+      <%= f.simple_fields_for :positions, position do |ppf| %>
+        <%= ppf.input :position, :collection => PlayerPosition::Positions %>
+        <%= ppf.input :started_at, :as => :string %>
+        <%= ppf.input :_destroy, :as => :boolean, :label => 'Remove Position' %>
+      <% end %>
+    </fieldset>
+  <% end %>
+  <fieldset>
+    <legend>Position <%= @player.positions.count + 1 %>
+    <%= f.simple_fields_for :positions, @player.positions.new do |ppf| %>
+      <%= ppf.input :position, :collection => PlayerPosition::Positions %>
+      <%= ppf.input :started_at, :as => :string %>
+    <% end %>
   <div class="actions">
     <%= f.submit %>
   </div>

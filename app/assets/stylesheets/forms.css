@@ -17,6 +17,8 @@ div.boolean, .simple_form input[type='submit'] {
 }
 
 div.boolean label, label.collection_radio_buttons {
+  text-align: left;
+  width: auto;
   float: none;
   margin: 0;
 }
